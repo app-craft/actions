@@ -1,4 +1,4 @@
-FROM debian:stable
+FROM elixir
 
 LABEL "repository"="https://github.com/jclem/actions"
 LABEL "homepage"="https://github.com/jclem/actions/mix"
@@ -8,20 +8,6 @@ LABEL "com.github.actions.name"="mix"
 LABEL "com.github.actions.description"="An action for running Elixir mix commands"
 LABEL "com.github.actions.icon"="code"
 LABEL "com.github.actions.color"="orange"
-
-ENV DEBIAN_FRONTEND noninteractive
-
-RUN apt-get update
-RUN apt-get install -y wget
-RUN apt-get install -y gnupg
-RUN wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb && \
-  dpkg -i erlang-solutions_1.0_all.deb
-RUN apt-get update
-RUN apt-get install -y esl-erlang
-RUN apt-get install -y elixir
-
-RUN locale-gen --purge en_US.UTF-8
-RUN echo -e 'LANG="en_US.UTF-8"\nLANGUAGE="en_US:en"\n' > /etc/default/locale
 
 ARG MIX_HOME=/github/home/.mix
 ENV MIX_HOME=$MIX_HOME
