@@ -20,6 +20,9 @@ RUN apt-get update
 RUN apt-get install -y esl-erlang
 RUN apt-get install -y elixir
 
+RUN locale-gen --purge en_US.UTF-8
+RUN echo -e 'LANG="en_US.UTF-8"\nLANGUAGE="en_US:en"\n' > /etc/default/locale
+
 ARG MIX_HOME=/github/home/.mix
 ENV MIX_HOME=$MIX_HOME
 
