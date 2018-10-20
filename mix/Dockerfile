@@ -9,6 +9,8 @@ LABEL "com.github.actions.description"="An action for running Elixir mix command
 LABEL "com.github.actions.icon"="code"
 LABEL "com.github.actions.color"="orange"
 
+ENV DEBIAN_FRONTEND noninteractive
+
 RUN apt-get update
 RUN apt-get install -y wget
 RUN apt-get install -y gnupg
