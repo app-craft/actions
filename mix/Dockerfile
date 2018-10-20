@@ -9,7 +9,7 @@ LABEL "com.github.actions.description"="An action for running Elixir mix command
 LABEL "com.github.actions.icon"="code"
 LABEL "com.github.actions.color"="orange"
 
-ARG MIX_HOME=/github/home/.mix
+ARG MIX_HOME=/.mix
 ENV MIX_HOME=$MIX_HOME
 
 RUN mix local.rebar --force
