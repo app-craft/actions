@@ -17,4 +17,6 @@ ENV MIX_ENV=$MIX_ENV
 RUN mix local.rebar --force
 RUN mix local.hex --force
 
-ENTRYPOINT ["mix"]
+COPY entrypoint.sh /entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh"]
