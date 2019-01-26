@@ -17,7 +17,7 @@ ENV MIX_ENV=$MIX_ENV
 RUN mix local.rebar --force
 RUN mix local.hex --force
 
-RUN mix archive.install hex dialyzer --force
+RUN mix archive.install hex dialyxir --force
 RUN mix dialyzer
 
 COPY entrypoint.sh /entrypoint.sh
